@@ -1,11 +1,12 @@
 import boto3
+import os
 from functions.dob_masking import dob_mask
 
 
 def main():
     # initialize variables for connecting to s3
-    access_key_id = 'AKIAVQHTBMWHQHU3CZ7V'
-    secret_access_key = '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'
+    access_key_id = os.environ["STELLAR_HEALTH_ACCESS_KEY_ID"]
+    secret_access_key = os.environ["STELLAR_HEALTH_SECRET_ACCESS_KEY"]
     bucket_name = 'stellar-tht-candidates'
 
     # create s3 client
